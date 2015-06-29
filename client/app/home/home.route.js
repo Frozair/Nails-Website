@@ -1,14 +1,24 @@
 (function(){
   angular
     .module('app.home')
-    .config(configure);
+    .run(appRun);
 
   /* @ngInject */
-  function configure($stateProvider){
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'home/home.html'
-      });
+  function appRun(routerHelper){
+    var otherwise = '/';
+    routerHelper.configureStates(getStates(), otherwise);
+  }
+
+  function getStates(){
+    return [
+      {
+        state: 'home',
+        config: {
+          url: '/',
+          templateUrl: 'app/home/home.html',
+          title: 'Home'
+        }
+      }
+    ];
   }
 })();
