@@ -8,15 +8,27 @@
   },
   "author": "Rudolph Newball <newrdev@gmail.com>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "body-parser": "^1.13.1",
+    "del": "^1.2.0",
+    "event-stream": "^3.3.1",
     "express": "^4.13.0",
     "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1"
-  },
-  "devDependencies": {
-    "connect-livereload": "^0.5.3",
-    "express": "^4.13.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlhint": "^0.1.1",
+    "gulp-inject": "^1.3.1",
+    "gulp-jshint": "^1.11.0",
     "gulp-livereload": "^3.8.0",
-    "tiny-lr": "^0.1.6"
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-order": "^1.1.1",
+    "gulp-print": "^1.1.0",
+    "gulp-sass": "^2.0.3",
+    "jshint-stylish": "^2.0.1",
+    "main-bower-files": "^2.8.2",
+    "method-override": "^2.3.3",
+    "q": "^1.4.1"
   }
 }

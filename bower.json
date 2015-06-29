@@ -16,7 +16,6 @@
   "dependencies": {
     "angular": "~1.4.1",
     "angular-material": "~0.10.0",
-    "ui-router": "~0.2.15",
-    "gulp": "~3.9.0"
+    "ui-router": "~0.2.15"
   }
 }
