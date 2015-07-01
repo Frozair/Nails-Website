@@ -1,8 +1,10 @@
-<div>
+<md-content class="offset-nav fill">
+  <div ng-include="'app/layout/topbar.html'"></div>
+
   <header class="clearfix">
-    <div>Header Area</div>
+    <!-- <div>Picture could go here</div> -->
   </header>
-  <section id="content" class="content">
+  <section id="content">
     <!-- <div ng-include="'app/layout/sidebar.html'"></div> -->
 
     <div ui-view></div>
@@ -16,4 +18,4 @@
         <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
     </div> -->
   </section>
-</div>
+</md-content>

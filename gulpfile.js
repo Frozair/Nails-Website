@@ -14,6 +14,7 @@ var paths = {
     scripts: clientApp + '/**/*.js',
     styles: [client + '/styles/*.css', client + '/styles/*.scss'],
     images: client + '/images/**/*',
+    fonts: client + '/fonts/*',
     index: client + '/index.html',
     partials: [clientApp + '/**/*.html'],
     distDev: './dist.dev',
@@ -107,7 +108,7 @@ pipes.scriptedPartials = function() {
 pipes.builtStylesDev = function() {
     return gulp.src(paths.styles)
         .pipe(plugins.sass())
-        .pipe(gulp.dest(paths.distDev));
+        .pipe(gulp.dest(paths.distDev + '/styles'));
 };
 
 pipes.builtStylesProd = function() {
@@ -117,7 +118,17 @@ pipes.builtStylesProd = function() {
             .pipe(plugins.minifyCss())
         .pipe(plugins.sourcemaps.write())
         .pipe(pipes.minifiedFileName())
-        .pipe(gulp.dest(paths.distProd));
+        .pipe(gulp.dest(paths.distProd + '/styles'));
+};
+
+pipes.processedFontsDev = function() {
+    return gulp.src(paths.fonts)
+        .pipe(gulp.dest(paths.distDev + '/fonts/'));
+};
+
+pipes.processedFontsProd = function() {
+    return gulp.src(paths.fonts)
+        .pipe(gulp.dest(paths.distProd + '/fonts/'));
 };
 
 pipes.processedImagesDev = function() {
@@ -170,11 +181,16 @@ pipes.builtIndexProd = function() {
 };
 
 pipes.builtAppDev = function() {
-    return es.merge(pipes.builtIndexDev(), pipes.builtPartialsDev(), pipes.processedImagesDev());
+    return es.merge(pipes.builtIndexDev(),
+                    pipes.builtPartialsDev(),
+                    pipes.processedImagesDev(),
+                    pipes.processedFontsDev());
 };
 
 pipes.builtAppProd = function() {
-    return es.merge(pipes.builtIndexProd(), pipes.processedImagesProd());
+    return es.merge(pipes.builtIndexProd(),
+                    pipes.processedImagesProd(),
+                    pipes.processedFontsProd);
 };
 
 // == TASKS ========
@@ -300,32 +316,32 @@ gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], 
             console.log('[nodemon] restarted dev server');
         });
 
-    // start live-reload server
-    plugins.livereload.listen({start: true});
-
-    // watch index
-    gulp.watch(paths.index, function() {
-        return pipes.builtIndexProd()
-            .pipe(plugins.livereload());
-    });
-
-    // watch app scripts
-    gulp.watch(paths.scripts, function() {
-        return pipes.builtAppScriptsProd()
-            .pipe(plugins.livereload());
-    });
-
-    // watch hhtml partials
-    gulp.watch(paths.partials, function() {
-        return pipes.builtAppScriptsProd()
-            .pipe(plugins.livereload());
-    });
-
-    // watch styles
-    gulp.watch(paths.styles, function() {
-        return pipes.builtStylesProd()
-            .pipe(plugins.livereload());
-    });
+    // // start live-reload server
+    // plugins.livereload.listen({start: true});
+    //
+    // // watch index
+    // gulp.watch(paths.index, function() {
+    //     return pipes.builtIndexProd()
+    //         .pipe(plugins.livereload());
+    // });
+    //
+    // // watch app scripts
+    // gulp.watch(paths.scripts, function() {
+    //     return pipes.builtAppScriptsProd()
+    //         .pipe(plugins.livereload());
+    // });
+    //
+    // // watch hhtml partials
+    // gulp.watch(paths.partials, function() {
+    //     return pipes.builtAppScriptsProd()
+    //         .pipe(plugins.livereload());
+    // });
+    //
+    // // watch styles
+    // gulp.watch(paths.styles, function() {
+    //     return pipes.builtStylesProd()
+    //         .pipe(plugins.livereload());
+    // });
 
 });
 

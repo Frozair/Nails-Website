@@ -1,1 +1,46 @@
-<div>Welcome Home!</div>
+<md-content
+  layout-fill
+  layout="column">
+  <div
+    layout-margin
+    layout="row"
+    layout-sm="column"
+    layout-align="center center">
+
+    <md-card flex="25" ng-click="ctrl.navigateTo('gallery')" class="pointer">
+      <img ng-src="images/main1.jpg" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        Gallery
+      </md-card-content>
+    </md-card>
+
+    <md-card flex="25">
+      <img ng-src="images/main2.jpg" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        Menu
+      </md-card-content>
+    </md-card>
+
+  </div>
+
+  <div
+    layout-margin
+    layout="row"
+    layout-sm="column"
+    layout-align="center center">
+
+    <md-card flex="25">
+      <img ng-src="images/main1.jpg" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        Schedule
+      </md-card-content>
+    </md-card>
+
+    <md-card flex="25">
+      <img ng-src="images/about.jpg" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        About
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>

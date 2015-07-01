@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('app.home')
+    .module('app.gallery')
     .run(appRun);
 
   /* @ngInject */
@@ -12,13 +12,11 @@
   function getStates(){
     return [
       {
-        state: 'home',
+        state: 'gallery',
         config: {
-          url: '/',
-          templateUrl: 'app/home/home.html',
-          title: 'Home',
-          controller: 'HomeController',
-          controllerAs: 'ctrl'
+          url: '/gallery',
+          templateUrl: 'app/gallery/gallery.html',
+          title: 'Gallery'
         }
       }
     ];

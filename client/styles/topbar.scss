@@ -1,0 +1,28 @@
+$nav-height: 56px;
+
+$main-font: 'amaticbold';
+
+md-toolbar{
+  &.main-nav {
+    // font-family: $main-font;
+    height: $nav-height;
+    min-height: $nav-height;
+    padding: 0 16px;
+  }
+  &.dark {
+    background-color: rgb(32, 35, 38);
+  }
+}
+
+.pin-top{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.logo {
+  background: url('/images/logo.png');
+  width: 136px;
+  height: 35px;
+}

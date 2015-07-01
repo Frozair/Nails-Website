@@ -4,6 +4,7 @@
   angular
     .module('angelmarienails', [
       'app.core',
+      'app.gallery',
       'app.layout',
       'app.home'
     ]);
