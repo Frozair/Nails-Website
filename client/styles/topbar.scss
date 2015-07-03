@@ -9,15 +9,43 @@ md-toolbar{
     min-height: $nav-height;
     padding: 0 16px;
   }
-  &.dark {
-    background-color: rgb(32, 35, 38);
+
+  & nav{
+    & ul{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    & h1 {
+      margin-top: 6px;
+    }
+  }
+}
+
+md-sidenav{
+  min-width: 230px;
+  width: 230px;
+}
+
+.social-list{
+  & md-list-item{
+    & img {
+      margin-right: 25px;
+    }
+
+    & div {
+      font-size: 18px;
+    }
+
+    & button:hover {
+      background-color: rgba(158,158,158,0.2) !important;
+    }
   }
 
-  & nav ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
+}
+
+.dark {
+  background-color: rgb(32, 35, 38);
 }
 
 .pin-top{

@@ -1,24 +1,49 @@
-<md-toolbar class="main-nav pin-top md-whiteframe-z3 dark">
-  <nav>
-    <h1 class="pull-left">
-      <a class="logo" ui-sref="home" md-button>Angel Marie Nails</a>
-    </h1>
-    <ul class="nav-list">
-      <li class="pointer">
-        <a href="#">
-          <img src="/images/social/email.png" class="icon"/>
-        </a>
-      </li>
-      <li class="pointer">
-        <a href="https://twitter.com/theangelmarie">
-          <img src="/images/social/twitter.png" class="icon"/>
-        </a>
-      </li>
-      <li class="pointer">
-        <a href="https://instagram.com/theangelmarie">
-          <img src="/images/social/instagram.png" class="icon"/>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</md-toolbar>
+<section ng-controller="TopBarController as ctrl" class="fill">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2 dark" md-component-id="left">
+    <md-toolbar class="dark">
+      <h1 class="md-toolbar-tools">The Angel Marie</h1>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <md-content layout-padding class="dark">
+      <md-list layout-fill class="social-list">
+        <md-list-item
+          class="pointer"
+          ng-repeat="social in ctrl.socialList"
+          ng-click="ctrl.open(social.href)">
+            <img ng-src="{{social.img}}" class="icon"/>
+            <p>{{social.name}}</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+
+  <div layout="column" z-index="-1">
+    <md-toolbar class="main-nav pin-top md-whiteframe-z3 dark">
+      <nav>
+        <md-button hide-gt-sm class="pull-left" ng-click="ctrl.toggle()">
+          Toggle
+        </md-button>
+        <h1 class="pull-left">
+          <a ui-sref="home" md-button>Angel Marie Nails</a>
+        </h1>
+        <ul class="nav-list" hide-sm>
+          <li>
+            <a href="#">
+              <img src="/images/social/email.png" class="icon"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/theangelmarie">
+              <img src="/images/social/twitter.png" class="icon"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/theangelmarie">
+              <img src="/images/social/instagram.png" class="icon"/>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </md-toolbar>
+  </div>
+</section>

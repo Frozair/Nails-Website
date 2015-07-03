@@ -4,6 +4,8 @@
 
 body {
   color: rgba(255,255,255,0.87);
+  font-family: fugaz-one, sans-serif;
+  font-size: 1.5em;
 }
 
 md-content {
@@ -33,4 +35,8 @@ md-card {
 .icon {
   height: 24px;
   width: 24px;
+}
+
+.menu {
+  text-align: center;
 }
