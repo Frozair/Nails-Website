@@ -12,6 +12,12 @@ md-toolbar{
   &.dark {
     background-color: rgb(32, 35, 38);
   }
+
+  & nav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
 }
 
 .pin-top{
@@ -25,4 +31,10 @@ md-toolbar{
   background: url('/images/logo.png');
   width: 136px;
   height: 35px;
+}
+
+.nav-list li{
+  margin-right: 20px;
+  margin-top: 15px;
+  float: right;
 }
