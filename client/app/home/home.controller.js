@@ -6,13 +6,8 @@
     .controller('HomeController', HomeController);
 
   /* @ngInject */
-  function HomeController($state){
+  function HomeController(){
     var vm = this;
-    vm.navigateTo = goTo;
-
-    function goTo(state){
-      $state.go(state);
-    }
   }
 
 })();

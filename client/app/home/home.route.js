@@ -5,8 +5,7 @@
 
   /* @ngInject */
   function appRun(routerHelper){
-    var otherwise = '/';
-    routerHelper.configureStates(getStates(), otherwise);
+    routerHelper.configureStates(getStates());
   }
 
   function getStates(){
