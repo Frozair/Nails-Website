@@ -23,7 +23,6 @@
           thumbUrl: '/images/gallery/thumbs/' + i + '_tn.jpg',
         });
       }
-      console.debug(images);
       return images;
     }
   }
