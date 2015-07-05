@@ -1,22 +1,4 @@
 <section ng-controller="TopBarController as ctrl" class="fill">
-  <md-sidenav class="md-sidenav-left md-whiteframe-z2 dark" md-component-id="left">
-    <md-toolbar class="dark">
-      <h1 class="md-toolbar-tools">The Angel Marie</h1>
-    </md-toolbar>
-    <md-divider></md-divider>
-    <md-content layout-padding class="dark">
-      <md-list layout-fill class="social-list">
-        <md-list-item
-          class="pointer"
-          ng-repeat="social in ctrl.socialList"
-          ng-click="ctrl.open(social.href)">
-            <img ng-src="{{social.img}}" class="icon"/>
-            <p>{{social.name}}</p>
-        </md-list-item>
-      </md-list>
-    </md-content>
-  </md-sidenav>
-
   <div layout="column" z-index="-1">
     <md-toolbar class="main-nav pin-top md-whiteframe-z3 dark">
       <nav>

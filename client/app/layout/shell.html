@@ -1,21 +1,25 @@
-<md-content class="offset-nav fill">
-  <div ng-include="'app/layout/topbar.html'"></div>
+<section layout="row">
+  
+  <section layout="column">
+    <div ng-include="'app/layout/topbar.html'"></div>
+    <md-content class="offset-nav fill">
+      <header class="clearfix">
+        <!-- <div>Picture could go here</div> -->
+      </header>
+      <section id="content">
+        <!-- <div ng-include="'app/layout/sidebar.html'"></div> -->
 
-  <header class="clearfix">
-    <!-- <div>Picture could go here</div> -->
-  </header>
-  <section id="content">
-    <!-- <div ng-include="'app/layout/sidebar.html'"></div> -->
+        <div ui-view></div>
 
-    <div ui-view></div>
+        <!-- <div ngplus-overlay
+             ngplus-overlay-delay-in="50"
+             ngplus-overlay-delay-out="700"
+             ngplus-overlay-animation="dissolve-animation">
+            <img src="images/busy.gif"/>
 
-    <!-- <div ngplus-overlay
-         ngplus-overlay-delay-in="50"
-         ngplus-overlay-delay-out="700"
-         ngplus-overlay-animation="dissolve-animation">
-        <img src="images/busy.gif"/>
-
-        <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
-    </div> -->
+            <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+        </div> -->
+      </section>
+    </md-content>
   </section>
-</md-content>
+</section>
