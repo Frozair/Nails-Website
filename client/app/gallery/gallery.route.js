@@ -5,8 +5,7 @@
 
   /* @ngInject */
   function appRun(routerHelper){
-    var otherwise = '/';
-    routerHelper.configureStates(getStates(), otherwise);
+    routerHelper.configureStates(getStates());
   }
 
   function getStates(){
@@ -16,7 +15,9 @@
         config: {
           url: '/gallery',
           templateUrl: 'app/gallery/gallery.html',
-          title: 'Gallery'
+          title: 'Gallery',
+          controller: 'GalleryController',
+          controllerAs: 'ctrl'
         }
       }
     ];

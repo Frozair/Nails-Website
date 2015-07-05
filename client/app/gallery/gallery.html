@@ -1,3 +1,9 @@
-<section>
-  Welcome to the gallery section.
+<section id="gallery">
+  <md-content >
+    <md-card ng-repeat="image in ctrl.images">
+      <a ng-click="ctrl.openLightboxModal($index)">
+        <img ng-src="{{image.thumbUrl}}" class="img-thumbnail" alt="">
+      </a>
+    </md-card>
+  </md-content>
 </section>
