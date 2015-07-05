@@ -2,6 +2,12 @@
   class="menu"
   layout-fill
   layout="column">
+  <a
+    id="Setmore_button_iframe"
+    href="https://my.setmore.com/shortBookingPage/6fdf85085c0fc5fbefddceaef57348788639fa0d">
+    Test
+  </a>
+
   <div
     layout-margin
     layout="row"
@@ -30,7 +36,9 @@
     layout-sm="column"
     layout-align="center center">
 
-    <md-card flex-sm="75" flex="25" ui-sref="gallery" class="pointer">
+    <md-card
+      setmore-trigger
+      flex-sm="75" flex="25" class="pointer">
       <img ng-src="images/home/schedule.jpg" class="md-card-image" alt="Washed Out">
       <md-card-content>
         SCHEDULE
