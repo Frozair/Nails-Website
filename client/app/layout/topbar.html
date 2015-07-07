@@ -2,9 +2,13 @@
   <div layout="column" z-index="-1">
     <md-toolbar class="main-nav pin-top md-whiteframe-z3 dark">
       <nav>
-        <md-button hide-gt-sm class="pull-left" ng-click="ctrl.toggle()">
-          Toggle
-        </md-button>
+        <div
+          hide-gt-sm
+          style="margin-top:16px"
+          class="pull-left pointer"
+          ng-click="ctrl.toggle()">
+          <i class="material-icons">menu</i>
+        </div>
         <h1 class="pull-left">
           <a ui-sref="home" md-button>Angel Marie Nails</a>
         </h1>
