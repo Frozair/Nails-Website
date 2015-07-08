@@ -1,4 +1,9 @@
 <section id="gallery">
+  <md-subheader
+    class="md-primary no-margin"
+    md-sticky>
+      Gallery
+    </md-subheader>
   <md-content >
     <md-card ng-repeat="image in ctrl.images">
       <a ng-click="ctrl.openLightboxModal($index)">
