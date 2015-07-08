@@ -45,10 +45,10 @@
         },
         {
           name: 'Prices',
-          state: 'gallery'
+          state: 'prices'
         },
         {
-          name: 'Schedule (Coming Soon)',
+          name: 'Schedule',
           state: ''
         },
         {
