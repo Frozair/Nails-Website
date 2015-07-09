@@ -1,0 +1,16 @@
+<div layout-fill layout="row" layout-align="center center" flex>
+  <md-content class="md-padding" flex>
+    <md-tabs
+      class="md-primary"
+      md-no-bar
+      md-stretch-tabs="always"
+      md-swipe-content="true">
+      <md-tab class="" ng-repeat="tab in ctrl.tabs">
+        <md-tab-label>{{tab.label}}</md-tab-label>
+        <md-tab-body>
+          <div ng-include="tab.src"></div>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

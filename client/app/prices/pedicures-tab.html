@@ -1,0 +1,18 @@
+<div ng-controller="PedicuresController as ctrl">
+  <md-grid-list
+    layout-align="center"
+    md-cols="2"
+    md-cols-sm="1"
+    md-row-height="300px"
+    md-gutter="12px">
+    <md-grid-tile ng-repeat="pedicure in ctrl.pedicures">
+      <md-card flex="75" style="height:270px;">
+        <md-card-content class="no-padding-top">
+          <h2 class="md-title">{{pedicure.name}}</h2>
+          <p class="sub-text">{{pedicure.description}}</p>
+          <p class="small-text pull-right">{{pedicure.time}} - {{pedicure.price}}</p>
+        </md-card-content>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

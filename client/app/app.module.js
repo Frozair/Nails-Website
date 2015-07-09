@@ -7,6 +7,7 @@
       'app.core',
       'app.gallery',
       'app.layout',
-      'app.home'
+      'app.home',
+      'app.prices'
     ]);
 })();
