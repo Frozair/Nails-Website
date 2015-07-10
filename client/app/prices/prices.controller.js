@@ -20,7 +20,7 @@
           src: 'app/prices/pedicures-tab.html'
         },
         {
-          label: 'Acrylics',
+          label: 'Acrylics/Other',
           src: 'app/prices/acrylics-tab.html'
         }
       ];

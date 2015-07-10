@@ -1,1 +1,22 @@
-<h1>Acrylics</h1>
+<div ng-controller="AcrylicsController as ctrl">
+  <md-grid-list
+    layout-align="center"
+    md-cols="2"
+    md-cols-sm="1"
+    md-row-height="500px"
+    md-gutter="12px">
+    <md-grid-tile ng-repeat="service in ctrl.services">
+      <md-card flex="75" style="height:450px;">
+        <md-card-content class="no-padding-top">
+          <h2 class="md-title">{{service.name}}</h2>
+          <md-list>
+            <md-list-item ng-repeat="item in service.list">
+              <p class="sub-text">{{item.name}}</p>
+              <p class="small-text pull-right">{{item.price}}</p>
+            </md-list-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
