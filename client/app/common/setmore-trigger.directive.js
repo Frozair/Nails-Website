@@ -6,7 +6,7 @@
     .directive('setmoreTrigger', setmoreTrigger);
 
   /* @ngInject */
-  function setmoreTrigger($timeout){
+  function setmoreTrigger(){
     var directive = {
         link: link,
         restrict: 'A',
@@ -15,14 +15,9 @@
 
     function link(scope, element, attrs){
       element.bind('click', function(e) {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 500);
-
-        $timeout(function(){
-          $('#Setmore_button_iframe').click();
-          $('#setmore-overlay, #setmore-fancy-box').show();
-        }, 600);
+        var href =
+          angular.element(document.getElementById('setmore-href')).attr('href');
+        window.location.href = href;
       });
     }
   }
