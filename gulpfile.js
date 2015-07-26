@@ -7,6 +7,7 @@ var print = require('gulp-print');
 var Q = require('q');
 var client = './client';
 var clientApp = client + '/app';
+var moduleName = "angelmarienails";
 
 // == PATH STRINGS ========
 
@@ -54,15 +55,15 @@ pipes.builtAppScriptsDev = function() {
 };
 
 pipes.builtAppScriptsProd = function() {
-    var scriptedPartials = pipes.scriptedPartials();
+    //var scriptedPartials = pipes.scriptedPartials();
     var validatedAppScripts = pipes.validatedAppScripts();
 
-    return es.merge(scriptedPartials, validatedAppScripts)
+    return es.merge(validatedAppScripts)
         .pipe(pipes.orderedAppScripts())
-        .pipe(plugins.sourcemaps.init())
+        //.pipe(plugins.sourcemaps.init())
             .pipe(plugins.concat('app.min.js'))
-            .pipe(plugins.uglify())
-        .pipe(plugins.sourcemaps.write())
+            //.pipe(plugins.uglify())
+        //.pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
 
@@ -72,12 +73,19 @@ pipes.builtVendorScriptsDev = function() {
 };
 
 pipes.builtVendorScriptsProd = function() {
-    return gulp.src(bowerFiles())
+    return gulp.src(bowerFiles({filter: /\.js$/i}))
         .pipe(pipes.orderedVendorScripts())
         .pipe(plugins.concat('vendor.min.js'))
-        .pipe(plugins.uglify())
+        //.pipe(plugins.uglify())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
+
+pipes.builtVendorCssProd = function(){
+  return gulp.src(bowerFiles({filter: /\.css$/i}))
+      .pipe(plugins.concat('vendor.min.css'))
+      .pipe(plugins.minifyCss())
+      .pipe(gulp.dest(paths.distScriptsProd));
+}
 
 pipes.validatedDevServerScripts = function() {
     return gulp.src(paths.scriptsDevServer)
@@ -96,13 +104,18 @@ pipes.builtPartialsDev = function() {
         .pipe(gulp.dest(paths.distScriptsDev));
 };
 
+pipes.builtPartialsProd = function() {
+    return pipes.scriptedPartials()
+        .pipe(gulp.dest(paths.distScriptsProd));
+};
+
 pipes.scriptedPartials = function() {
     return pipes.validatedPartials()
         .pipe(plugins.htmlhint.failReporter())
-        .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe(plugins.ngHtml2js({
-            moduleName: "angelmarienails"
-        }));
+        .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}));
+        // .pipe(plugins.ngHtml2js({
+        //     moduleName: moduleName
+        // }));
 };
 
 pipes.builtStylesDev = function() {
@@ -113,10 +126,8 @@ pipes.builtStylesDev = function() {
 
 pipes.builtStylesProd = function() {
     return gulp.src(paths.styles)
-        .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.sass())
-            .pipe(plugins.minifyCss())
-        .pipe(plugins.sourcemaps.write())
+        .pipe(plugins.sass())
+        .pipe(plugins.minifyCss())
         .pipe(pipes.minifiedFileName())
         .pipe(gulp.dest(paths.distProd + '/styles'));
 };
@@ -127,8 +138,8 @@ pipes.processedFontsDev = function() {
 };
 
 pipes.processedFontsProd = function() {
-    return gulp.src(paths.fonts)
-        .pipe(gulp.dest(paths.distProd + '/fonts/'));
+    // return gulp.src(paths.fonts)
+    //     .pipe(gulp.dest(paths.distProd + '/fonts/'));
 };
 
 pipes.processedImagesDev = function() {
@@ -168,12 +179,14 @@ pipes.builtIndexDev = function() {
 pipes.builtIndexProd = function() {
 
     var vendorScripts = pipes.builtVendorScriptsProd();
+    var vendorCss = pipes.builtVendorCssProd();
     var appScripts = pipes.builtAppScriptsProd();
     var appStyles = pipes.builtStylesProd();
 
     return pipes.validatedIndex()
         .pipe(gulp.dest(paths.distProd)) // write first to get relative path for inject
         .pipe(plugins.inject(vendorScripts, {relative: true, name: 'bower'}))
+        .pipe(plugins.inject(vendorCss, {relative: true, name: 'bower'}))
         .pipe(plugins.inject(appScripts, {relative: true}))
         .pipe(plugins.inject(appStyles, {relative: true}))
         .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
@@ -188,9 +201,9 @@ pipes.builtAppDev = function() {
 };
 
 pipes.builtAppProd = function() {
-    return es.merge(pipes.builtIndexProd(),
-                    pipes.processedImagesProd(),
-                    pipes.processedFontsProd);
+  return es.merge(pipes.builtIndexProd(),
+                  pipes.builtPartialsProd(),
+                  pipes.processedImagesProd());
 };
 
 // == TASKS ========
@@ -310,38 +323,38 @@ gulp.task('watch-dev', ['clean-build-app-dev', 'validate-devserver-scripts'], fu
 gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], function() {
 
     // start nodemon to auto-reload the dev server
-    plugins.nodemon({ script: 'server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'production'} })
+    plugins.nodemon({ script: 'server/server.js', ext: 'js', watch: ['devServer/'], env: {NODE_ENV : 'production'} })
         .on('change', ['validate-devserver-scripts'])
         .on('restart', function () {
             console.log('[nodemon] restarted dev server');
         });
 
-    // // start live-reload server
-    // plugins.livereload.listen({start: true});
-    //
-    // // watch index
-    // gulp.watch(paths.index, function() {
-    //     return pipes.builtIndexProd()
-    //         .pipe(plugins.livereload());
-    // });
-    //
-    // // watch app scripts
-    // gulp.watch(paths.scripts, function() {
-    //     return pipes.builtAppScriptsProd()
-    //         .pipe(plugins.livereload());
-    // });
-    //
-    // // watch hhtml partials
-    // gulp.watch(paths.partials, function() {
-    //     return pipes.builtAppScriptsProd()
-    //         .pipe(plugins.livereload());
-    // });
-    //
-    // // watch styles
-    // gulp.watch(paths.styles, function() {
-    //     return pipes.builtStylesProd()
-    //         .pipe(plugins.livereload());
-    // });
+    // start live-reload server
+    plugins.livereload.listen({start: true});
+
+    // watch index
+    gulp.watch(paths.index, function() {
+        return pipes.builtIndexProd()
+            .pipe(plugins.livereload());
+    });
+
+    // watch app scripts
+    gulp.watch(paths.scripts, function() {
+        return pipes.builtAppScriptsProd()
+            .pipe(plugins.livereload());
+    });
+
+    // watch hhtml partials
+    gulp.watch(paths.partials, function() {
+        return pipes.builtAppScriptsProd()
+            .pipe(plugins.livereload());
+    });
+
+    // watch styles
+    gulp.watch(paths.styles, function() {
+        return pipes.builtStylesProd()
+            .pipe(plugins.livereload());
+    });
 
 });
 
