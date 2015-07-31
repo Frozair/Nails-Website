@@ -5,6 +5,7 @@
     .module('angelmarienails', [
       'app.common',
       'app.core',
+      'app.contact',
       'app.gallery',
       'app.layout',
       'app.home',
