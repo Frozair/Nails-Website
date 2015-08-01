@@ -9,8 +9,11 @@
           ng-click="ctrl.toggle()">
           <i class="material-icons">menu</i>
         </div>
-        <h1 class="pull-left">
-          <a ui-sref="home" md-button>Angel Marie Nails</a>
+        <h1 class="pull-left title" hide-sm>
+          Angel Marie Nails
+        </h1>
+        <h1 class="pull-left title" hide-gt-sm>
+          {{ctrl.getCurrentState()}}
         </h1>
         <ul class="nav-list pull-right" hide-sm>
           <li class="pointer" ui-sref="contact">

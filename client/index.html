@@ -18,19 +18,23 @@
       class="md-sidenav-left md-whiteframe-z2 dark"
       md-component-id="left">
       <md-toolbar class="dark">
-        <h1 class="md-toolbar-tools">The Angel Marie</h1>
+        <h1 class="md-toolbar-tools">Angel Marie Nails</h1>
       </md-toolbar>
       <md-divider></md-divider>
       <div ng-controller="SideBarController as ctrl">
         <md-content layout-padding class="dark">
-          <md-list layout-fill>
-            <md-list-item class="pointer" ng-repeat="route in ctrl.navRoutes">
-              <div ng-click="ctrl.navigateTo($index);">
+          <md-list layout-fill class="social-list">
+            <md-list-item
+              class="pointer"
+              ng-repeat="route in ctrl.navRoutes"
+              ng-click="ctrl.navigateTo($index);">
+              <div>
                 {{route.name}}
               </div>
             </md-list-item>
           </md-list>
         </md-content>
+        <hr />
         <md-content layout-padding class="dark">
           <md-list layout-fill class="social-list">
             <md-list-item

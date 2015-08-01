@@ -15,10 +15,15 @@
 
     function getSocialList(){
       return [
+        // {
+        //   name: 'Contact',
+        //   img: '/images/social/email.png',
+        //   href: '#/contact'
+        // },
         {
-          name: 'Contact',
-          img: '/images/social/email.png',
-          href: '#'
+          name: 'Tumblr',
+          img: '/images/social/tumblr.png',
+          href: 'http://theangelmarie.tumblr.com/'
         },
         {
           name: 'Twitter',
@@ -48,12 +53,12 @@
           state: 'prices'
         },
         {
-          name: 'Schedule',
-          state: ''
+          name: 'Contact',
+          state: 'contact'
         },
         {
           name: 'About',
-          state: 'gallery'
+          state: 'about'
         }
       ];
     }
