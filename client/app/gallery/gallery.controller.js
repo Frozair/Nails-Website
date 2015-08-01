@@ -7,6 +7,8 @@
 
   /* @ngInject */
   function GalleryController(){
+    var TOTAL_IMAGES = 33;
+    
     var ctrl = this;
     ctrl.images = getImages();
     ctrl.openLightboxModal = openModal;
@@ -17,7 +19,7 @@
 
     function getImages(){
       var images = [];
-      for(var i = 1; i <= 26; i++){
+      for(var i = 1; i <= TOTAL_IMAGES; i++){
         images.push({
           url: '/images/gallery/' + i + '.jpg',
           thumbUrl: '/images/gallery/thumbs/' + i + '_tn.jpg',
