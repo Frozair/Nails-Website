@@ -6,14 +6,16 @@
     .controller('GalleryController', GalleryController);
 
   /* @ngInject */
-  function GalleryController(){
+  function GalleryController(GalleryDialog){
     var TOTAL_IMAGES = 33;
-    
+
     var ctrl = this;
     ctrl.images = getImages();
-    ctrl.openLightboxModal = openModal;
+    ctrl.openSlideshowModal = openModal;
 
     function openModal(index){
+      GalleryDialog.show(ctrl.images, index);
+
       //Lightbox.openModal(ctrl.images, index);
     }
 

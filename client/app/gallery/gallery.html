@@ -1,12 +1,13 @@
-<section id="gallery">
+<section id="gallery" layout-align="center center" layout="column">
   <md-subheader
-    class="md-primary no-margin"
-    md-sticky>
+    hide-sm
+    flex="100"
+    class="md-primary breadcrumb">
       Gallery
     </md-subheader>
   <md-content >
     <md-card ng-repeat="image in ctrl.images">
-      <a ng-click="ctrl.openLightboxModal($index)">
+      <a ng-click="ctrl.openSlideshowModal($index)">
         <img ng-src="{{image.thumbUrl}}" class="img-thumbnail" alt="">
       </a>
     </md-card>
