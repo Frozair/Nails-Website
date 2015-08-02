@@ -1,0 +1,19 @@
+<md-dialog
+  aria-label="Gallery Slideshow"
+  class="slideshow">
+  <md-dialog-content layout-align="center center" layout="column">
+    <div class="pull-right mobile-close-btn" hide-gt-sm>
+      <md-button ng-click="ctrl.close()">x</md-button>
+    </div>
+    <div class="slideshow-buttons" hide-sm>
+      <md-button ng-click="ctrl.prevImage()">&lt;-</md-button>
+      <md-button ng-click="ctrl.close()">x</md-button>
+      <md-button ng-click="ctrl.nextImage()">-&gt;</md-button>
+    </div>
+    <img
+      md-swipe-right="ctrl.prevImage()"
+      md-swipe-left="ctrl.nextImage()"
+      ng-src="{{ctrl.currentImg}}"
+      class="slideshow-img"/>
+  </md-dialog-content>
+</md-dialog>
