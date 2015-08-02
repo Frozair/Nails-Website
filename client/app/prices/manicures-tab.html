@@ -4,9 +4,10 @@
     md-cols="2"
     md-cols-sm="1"
     md-row-height="300px"
+    md-row-height-sm="430px"
     md-gutter="12px">
     <md-grid-tile ng-repeat="manicure in ctrl.manicures">
-      <md-card flex="75" style="height:270px;">
+      <md-card flex="75" class="manicure-card">
         <md-card-content class="no-padding-top">
           <h2 class="md-title">{{manicure.name}}</h2>
           <p class="sub-text">{{manicure.description}}</p>

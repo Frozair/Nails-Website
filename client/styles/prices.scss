@@ -15,3 +15,21 @@ md-tabs md-ink-bar {
   color: rgb(255, 19, 82);
   background: rgb(255, 19, 82);
 }
+
+.pedicure-card {
+  height:270px;
+}
+
+.manicure-card {
+  height:270px;
+}
+
+@media (max-width: 767px) {
+  .pedicure-card {
+    height:530px;
+  }
+
+  .manicure-card {
+    height:400px;
+  }
+}
