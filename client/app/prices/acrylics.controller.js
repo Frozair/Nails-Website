@@ -57,7 +57,7 @@
             },
             {
               name: 'Unlimited Nail Art/Embellishments',
-              price: '$20.00 / 45 min.'
+              price: '$25.00 / 50 min.'
             },
             {
               name: 'Polish Change',

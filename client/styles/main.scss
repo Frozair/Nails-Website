@@ -83,3 +83,11 @@ ul {
   padding: 0;
   text-align: center;
 }
+
+[flex-sm="75"]{
+  -webkit-flex: auto;
+}
+
+[flex="100"]{
+  -webkit-flex: 1;
+}

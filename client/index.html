@@ -17,11 +17,16 @@
     <md-sidenav
       class="md-sidenav-left md-whiteframe-z2 dark"
       md-component-id="left">
+      <div ng-controller="SideBarController as ctrl">
       <md-toolbar class="dark">
-        <h1 class="md-toolbar-tools">Angel Marie Nails</h1>
+        <h1
+          class="md-toolbar-tools"
+          ng-click="ctrl.navigateTo(0);">
+          Angel Marie Nails
+        </h1>
       </md-toolbar>
       <md-divider></md-divider>
-      <div ng-controller="SideBarController as ctrl">
+      <div>
         <md-content layout-padding class="dark">
           <md-list layout-fill class="social-list">
             <md-list-item
@@ -47,6 +52,7 @@
           </md-list>
         </md-content>
       </div>
+    </div>
     </md-sidenav>
 
     <section class="fill" id="main-content">
