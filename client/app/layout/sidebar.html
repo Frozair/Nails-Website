@@ -1,0 +1,40 @@
+<md-sidenav
+  class="md-sidenav-left md-whiteframe-z2 dark"
+  md-component-id="left">
+  <div ng-controller="SideBarController as ctrl">
+  <md-toolbar class="dark">
+    <h1
+      class="md-toolbar-tools"
+      ng-click="ctrl.navigateTo(0);">
+      Angel Marie Nails
+    </h1>
+  </md-toolbar>
+  <md-divider></md-divider>
+  <div>
+    <md-content layout-padding class="dark">
+      <md-list layout-fill class="social-list">
+        <md-list-item
+          class="pointer"
+          ng-repeat="route in ctrl.navRoutes"
+          ng-click="ctrl.navigateTo($index);">
+          <div>
+            {{route.name}}
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+    <hr />
+    <md-content layout-padding class="dark">
+      <md-list layout-fill class="social-list">
+        <md-list-item
+          class="pointer"
+          ng-repeat="social in ctrl.socialList"
+          ng-click="ctrl.open(social.href)">
+            <img ng-src="{{social.img}}" class="icon"/>
+            <p>{{social.name}}</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>
+</md-sidenav>
