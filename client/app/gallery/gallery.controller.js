@@ -6,28 +6,59 @@
     .controller('GalleryController', GalleryController);
 
   /* @ngInject */
-  function GalleryController(GalleryDialog){
+  function GalleryController(GalleryDialog, $http){
     var TOTAL_IMAGES = 33;
 
     var ctrl = this;
-    ctrl.images = getImages();
+    ctrl.images = [];
     ctrl.openSlideshowModal = openModal;
+    ctrl.closeGallery = closeGallery;
+    ctrl.options = {
+      index: 0,
+      history: false
+    };
+    ctrl.isGalleryOpen = false;
 
-    function openModal(index){
-      GalleryDialog.show(ctrl.images, index);
+    getImages();
 
-      //Lightbox.openModal(ctrl.images, index);
+    function openModal(index)
+    {
+      if(angular.isDefined(index)) {
+        ctrl.options.index = index;
+      }
+
+      ctrl.isGalleryOpen = true;
     }
 
-    function getImages(){
-      var images = [];
-      for(var i = 1; i <= TOTAL_IMAGES; i++){
-        images.push({
-          url: '/images/gallery/' + i + '.jpg',
-          thumbUrl: '/images/gallery/thumbs/' + i + '_tn.jpg',
-        });
-      }
-      return images;
+    function getImages()
+    {
+      $http({
+        method: 'GET',
+        url: '/public/data.json'
+      }).then(successCallback, errorCallBack);
+    }
+
+    function successCallback(response)
+    {
+      angular.forEach(response.data.resources, function(value, key) {
+        var img = {
+          src: value.url,
+          w: value.width,
+          h: value.height,
+          thumbUrl: value.url
+        };
+
+        this.push(img);
+      }, ctrl.images);
+    }
+
+    function errorCallBack(response)
+    {
+      console.log(response);
+    }
+
+    function closeGallery() {
+      ctrl.isGalleryOpen = false;
     }
   }
 })();

@@ -11,5 +11,7 @@
         <img ng-src="{{image.thumbUrl}}" class="img-thumbnail" alt="">
       </a>
     </md-card>
+
+    <div ng-photoswipe slides="ctrl.images" open="ctrl.isGalleryOpen" on-close="ctrl.closeGallery()" options="ctrl.options"></div>
   </md-content>
 </section>

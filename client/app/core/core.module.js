@@ -4,6 +4,7 @@
   angular
     .module('app.core', [
       'blocks.router',
-      'ngMaterial'
+      'ngMaterial',
+      'ngPhotoswipe'
     ]);
 })();
