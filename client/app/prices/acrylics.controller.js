@@ -28,7 +28,7 @@
             },
             {
               name: 'Fill',
-              price: '$14.00'
+              price: '$20.00'
             },
             {
               name: 'Repair',
