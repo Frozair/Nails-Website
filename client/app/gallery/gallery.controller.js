@@ -40,11 +40,30 @@
 
     function successCallback(response)
     {
+      var ratio = 1;
+      if( window.innerHeight > window.innerWidth )
+      {
+        ratio = window.innerWidth / window.innerHeight;
+      } else {
+        ratio = window.innerHeight / window.innerWidth;
+      }
+
       angular.forEach(response.data.resources, function(value, key) {
+        var w, h;
+
+        if( value.width > value.height )
+        {
+          w = value.width * ratio;
+          h = value.height * ratio;
+        } else {
+          w = value.height * ratio;
+          h = value.width * ratio;
+        }
+
         var img = {
           src: value.url,
-          w: value.width,
-          h: value.height,
+          w: w,
+          h: h,
           thumbUrl: value.url
         };
 
