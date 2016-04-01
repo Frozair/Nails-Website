@@ -26,14 +26,14 @@
             'paraffin dip, a relaxing massage of the hands and arms ' +
             'topped off with the polish of your choice.',
           time: '45 min.',
-          price: '$30.00/$40.00'
+          price: '$35.00/$45.00'
         },
         {
           name: 'Gel Manicure',
           description: 'Gel polish goes on like regular nail polish, ' +
             'requires no dry time and can last 10 to 14 days without chipping.',
           time: '35 min.',
-          price: '$25.00'
+          price: '$30.00'
         },
         {
           name: 'Gel Polish Removal',
