@@ -28,7 +28,7 @@
             },
             {
               name: 'Fill',
-              price: '$14.00'
+              price: '$20.00'
             },
             {
               name: 'Repair',
@@ -39,8 +39,20 @@
               price: '$35.00'
             },
             {
-              name: 'Glitter',
+              name: 'Glitter Acrylic',
               price: '$5.00'
+            },
+            {
+              name: 'Gel polish over Acrylic',
+              price: '$10.00'
+            },
+            {
+              name: 'Any shape other than square',
+              price: '$5.00'
+            },
+            {
+              name: '3D Roses',
+              price: '$5.00/Nail'
             }
           ]
         },

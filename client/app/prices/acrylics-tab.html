@@ -3,10 +3,10 @@
     layout-align="center"
     md-cols="2"
     md-cols-sm="1"
-    md-row-height="500px"
+    md-row-height="650px"
     md-gutter="12px">
     <md-grid-tile ng-repeat="service in ctrl.services">
-      <md-card flex="75" style="height:450px;">
+      <md-card flex="75" style="height:600px;">
         <md-card-content class="no-padding-top">
           <h2 class="md-title">{{service.name}}</h2>
           <md-list>
@@ -19,4 +19,17 @@
       </md-card>
     </md-grid-tile>
   </md-grid-list>
+
+  <md-card flex="55" layout-align="center">
+    <md-card-content
+      style="padding: 0;"
+      md-cols="1"
+      md-cols-sm="1">
+      <h2 class="md-title" style="text-transform:uppercase">All prices may vary depending on the length &amp; shape of your nails.</h2>
+    </md-card-content>
+  </md-card>
+</div>
+
+<div>
+
 </div>

@@ -5,11 +5,10 @@
     class="md-primary breadcrumb">
       Gallery
     </md-subheader>
-  <md-content >
-    <md-card ng-repeat="image in ctrl.images">
-      <a ng-click="ctrl.openSlideshowModal($index)">
-        <img ng-src="{{image.thumbUrl}}" class="img-thumbnail" alt="">
-      </a>
+  <md-content
+    flex="100">
+    <md-card ng-repeat="image in ctrl.images track by $index" ng-click="ctrl.openSlideshowModal($index)">
+      <img ng-src="{{image.thumbUrl}}" width="300" height="300" class="img-thumbnail" alt="">
     </md-card>
 
     <div ng-photoswipe slides="ctrl.images" open="ctrl.isGalleryOpen" on-close="ctrl.closeGallery()" options="ctrl.options"></div>
