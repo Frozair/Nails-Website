@@ -22,7 +22,8 @@ var paths = {
     distProd: './dist.prod',
     distScriptsDev: './dist.dev/app',
     distScriptsProd: './dist.prod/app',
-    scriptsDevServer: 'server/*.js'
+    scriptsDevServer: 'server/*.js',
+    robots: client + '/robots.txt'
 };
 
 // == PIPE SEGMENTS ========
@@ -182,6 +183,8 @@ pipes.builtIndexProd = function() {
     var vendorCss = pipes.builtVendorCssProd();
     var appScripts = pipes.builtAppScriptsProd();
     var appStyles = pipes.builtStylesProd();
+
+    gulp.src(paths.robots).pipe(gulp.dest(paths.distProd));
 
     return pipes.validatedIndex()
         .pipe(gulp.dest(paths.distProd)) // write first to get relative path for inject
