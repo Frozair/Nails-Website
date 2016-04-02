@@ -24,9 +24,21 @@ md-tabs md-ink-bar {
   height:270px;
 }
 
+@media (max-width: 1024px) {
+  .pedicure-card {
+    height:450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pedicure-card {
+    height:500px;
+  }
+}
+
 @media (max-width: 767px) {
   .pedicure-card {
-    height:530px;
+    height:450px;
   }
 
   .manicure-card {
