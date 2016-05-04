@@ -5,6 +5,8 @@
     .module('app.core', [
       'blocks.router',
       'ngMaterial',
-      'ngPhotoswipe'
+      'ngPhotoswipe',
+      'angulartics',
+      'angulartics.google.analytics'
     ]);
 })();
