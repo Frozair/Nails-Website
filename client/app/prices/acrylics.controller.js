@@ -15,15 +15,7 @@
           name: 'Acrylics',
           list: [
             {
-              name: 'Short',
-              price: '$25.00'
-            },
-            {
-              name: 'Medium',
-              price: '$28.00'
-            },
-            {
-              name: 'Long',
+              name: 'Full Set',
               price: '$30.00'
             },
             {
@@ -60,6 +52,10 @@
           name: 'Other Services',
           list: [
             {
+              name: 'Chrome',
+              price: '$10.00/All nails or $3/Nail'
+            },
+            {
               name: 'Paraffin Treatment',
               price: '$10.00 (Hands or Feet)'
             },
@@ -78,6 +74,10 @@
             {
               name: 'French',
               price: '$5.00'
+            },
+            {
+              name: 'Travel Fee',
+              price: '$20/destination (prices may vary depending on location)'
             }
           ]
         }
