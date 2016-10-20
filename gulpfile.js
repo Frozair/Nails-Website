@@ -61,10 +61,10 @@ pipes.builtAppScriptsProd = function() {
 
     return es.merge(validatedAppScripts)
         .pipe(pipes.orderedAppScripts())
-        //.pipe(plugins.sourcemaps.init())
+        .pipe(plugins.sourcemaps.init())
             .pipe(plugins.concat('app.min.js'))
-            //.pipe(plugins.uglify())
-        //.pipe(plugins.sourcemaps.write())
+            .pipe(plugins.uglify({mangle: false}))
+        .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
 
@@ -77,7 +77,7 @@ pipes.builtVendorScriptsProd = function() {
     return gulp.src(bowerFiles({filter: /\.js$/i}))
         .pipe(pipes.orderedVendorScripts())
         .pipe(plugins.concat('vendor.min.js'))
-        //.pipe(plugins.uglify())
+        .pipe(plugins.uglify({mangle: false}))
         .pipe(gulp.dest(paths.distScriptsProd));
 };
 
