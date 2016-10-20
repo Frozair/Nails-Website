@@ -91,3 +91,11 @@ ul {
 [flex="100"]{
   -webkit-flex: 1;
 }
+
+md-list-item div {
+  width: 100%;
+
+  .sub-text {
+    font-size: 0.8em;
+  }
+}

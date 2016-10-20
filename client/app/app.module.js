@@ -10,6 +10,7 @@
       'app.gallery',
       'app.layout',
       'app.home',
-      'app.prices'
+      'app.prices',
+      'app.faq'
     ]);
 })();

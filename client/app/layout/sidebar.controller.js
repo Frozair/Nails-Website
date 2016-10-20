@@ -53,6 +53,10 @@
           state: 'prices'
         },
         {
+          name: 'FAQ',
+          state: 'faq'
+        },
+        {
           name: 'Contact',
           state: 'contact'
         },
