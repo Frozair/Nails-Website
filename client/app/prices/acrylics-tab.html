@@ -1,12 +1,13 @@
 <div ng-controller="AcrylicsController as ctrl">
   <md-grid-list
     layout-align="center"
-    md-cols="2"
+    md-cols="1"
+    md-cols-md="1"
     md-cols-sm="1"
-    md-row-height="650px"
+    md-row-height="670px"
     md-gutter="12px">
     <md-grid-tile ng-repeat="service in ctrl.services">
-      <md-card flex="75" style="height:600px;">
+      <md-card flex="100" style="height:660px;">
         <md-card-content class="no-padding-top">
           <h2 class="md-title">{{service.name}}</h2>
           <md-list>

@@ -16,35 +16,47 @@
           list: [
             {
               name: 'Full Set',
-              price: '$30.00'
+              price: '$30'
             },
             {
-              name: 'Fill',
-              price: '$20.00'
+              name: 'Fill/Rebalance',
+              price: '$20 (Applies to sets done by me)'
+            },
+            {
+              name: 'Fill/Rebalance',
+              price: '$25 (Applies to sets NOT done by me)'
             },
             {
               name: 'Repair',
-              price: '$3.00'
+              price: '$3'
             },
             {
               name: 'Pink & White',
-              price: '$35.00'
+              price: '$35'
             },
             {
               name: 'Glitter Acrylic',
-              price: '$5.00'
+              price: '$5'
             },
             {
               name: 'Gel polish over Acrylic',
-              price: '$10.00'
+              price: '$10'
             },
             {
               name: 'Any shape other than square',
-              price: '$5.00'
+              price: '$5'
             },
             {
               name: '3D Roses',
-              price: '$5.00/Nail'
+              price: '$5/Nail'
+            },
+            {
+              name: 'Gel Polish Removal',
+              price: '$5 (Acrylics)'
+            },
+            {
+              name: 'Cut Down',
+              price: '$10'
             }
           ]
         },
@@ -52,28 +64,28 @@
           name: 'Other Services',
           list: [
             {
-              name: 'Chrome',
-              price: '$10.00/All nails or $3/Nail'
+              name: 'Chrome or Holographic Powder',
+              price: '$10/All nails or $3/Nail'
             },
             {
               name: 'Paraffin Treatment',
-              price: '$10.00 (Hands or Feet)'
+              price: '$10 (Hands or Feet)'
             },
             {
               name: 'Nail Art/ Embellishments',
-              price: '$5.00+ (depends on request)'
+              price: '$5+ (depends on request)'
             },
             {
               name: 'Unlimited Nail Art/Embellishments',
-              price: '$25.00 / 50 min.'
+              price: '$25 / 50 min.'
             },
             {
               name: 'Polish Change',
-              price: '$8.00'
+              price: '$8'
             },
             {
               name: 'French',
-              price: '$5.00'
+              price: '$5'
             },
             {
               name: 'Travel Fee',
