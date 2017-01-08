@@ -36,7 +36,11 @@
             },
             {
               name: 'Glitter Acrylic',
-              price: '$5'
+              price: '$5/Nail or $10/All Nails'
+            },
+            {
+              name: 'Ombre Acrylic',
+              price: '$5/Nail or $10/All Nails'
             },
             {
               name: 'Gel polish over Acrylic',
@@ -65,7 +69,19 @@
           list: [
             {
               name: 'Chrome or Holographic Powder',
-              price: '$10/All nails or $3/Nail'
+              price: '$15/All nails or $3/Nail'
+            },
+            {
+              name: 'Rainbow Crystals',
+              price: '$7-$10/Nail (Depends on req)'
+            },
+            {
+              name: 'Swavorski Crystals',
+              price: '$3-$7/Nail (Depends on req)'
+            },
+            {
+              name: 'Nail Stamp',
+              price: '$3/Nail'
             },
             {
               name: 'Paraffin Treatment',
@@ -89,7 +105,7 @@
             },
             {
               name: 'Travel Fee',
-              price: '$20/destination (prices may vary depending on location)'
+              price: '$25/destination (prices may vary depending on location)'
             }
           ]
         }
