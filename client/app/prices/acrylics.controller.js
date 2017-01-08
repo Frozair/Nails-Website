@@ -73,11 +73,11 @@
             },
             {
               name: 'Rainbow Crystals',
-              price: '$7-$10/Nail (Depends on req)'
+              price: '$3-$7/Nail (Depends on req)'
             },
             {
-              name: 'Swavorski Crystals',
-              price: '$3-$7/Nail (Depends on req)'
+              name: 'Swarovski Crystals',
+              price: '$7-$10/Nail (Depends on req)'
             },
             {
               name: 'Nail Stamp',
