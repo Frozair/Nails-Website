@@ -6,14 +6,13 @@
     md-cols-sm="1"
     md-row-height="670px"
     md-gutter="12px">
-    <md-grid-tile ng-repeat="service in ctrl.services">
+    <md-grid-tile>
       <md-card flex="100" style="height:660px;">
         <md-card-content class="no-padding-top">
-          <h2 class="md-title">{{service.name}}</h2>
           <md-list>
-            <md-list-item ng-repeat="item in service.list">
+            <md-list-item ng-repeat="item in ctrl.services">
               <p class="sub-text">{{item.name}}</p>
-              <p class="small-text pull-right">{{item.price}}</p>
+              <p class="small-text pull-right" ng-bind-html="item.price"></p>
             </md-list-item>
           </md-list>
         </md-card-content>
