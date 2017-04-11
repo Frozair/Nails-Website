@@ -18,7 +18,7 @@
     function getServices(){
       return [
         {
-          name: 'Full Set',
+          name: 'Full Set Base Price',
           price: '$35 (Short to Medium)<br />$40 (Long)<br />$45 (Extra Long)'
         },
         {
@@ -63,7 +63,7 @@
         },
         {
           name: 'Glow in the Dark Acrylic Powder',
-          price: '$15'
+          price: '$15/$10 Fill Add-On'
         },
         {
           name: 'Glitter Acrylic',
