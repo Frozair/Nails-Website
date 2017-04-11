@@ -1,0 +1,22 @@
+<div ng-controller="AddOnsController as ctrl">
+  <md-grid-list
+    layout-align="center"
+    md-cols="1"
+    md-cols-md="1"
+    md-cols-sm="1"
+    md-row-height="560px"
+    md-gutter="12px">
+    <md-grid-tile>
+      <md-card flex="100" style="height:540px;">
+        <md-card-content class="no-padding-top">
+          <md-list>
+            <md-list-item ng-repeat="item in ctrl.services">
+              <p class="sub-text">{{item.name}}</p>
+              <p class="small-text pull-right">{{item.price}}</p>
+            </md-list-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
