@@ -3,137 +3,19 @@
     hide-sm
     flex="100"
     class="md-primary breadcrumb">
-      FAQ
+      Frequently Asked Questions
   </md-subheader>
-  <md-content layout="row" layout-align="center center">
-    <md-card flex="70">
-      <md-card-content class="no-padding-top">
-        <md-list layout-align="center left">
-
-          <md-list-item class="md-2-line">
-            <div>
-              <p class="sub-text">What is your method of payment?</p>
-              <p class="small-text">
-                 I accept cash and card via the Square Cash app, which must be
-                 downloaded and set up before your first appointment.
-              </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-              <p class="sub-text">Is there a grace period when arriving to my appointment?</p>
-              <p class="small-text">
-                Yes, there is a 15 minute grace period.
-                If you are more than 15 minutes late your appointment will have to
-                be rescheduled depending on the service.
-              </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-              <p class="sub-text">What is the purpose of paying a deposit?</p>
-              <p class="small-text">
-                A $20 deposit is required in order to book an appointment.
-                The deposit goes toward the cost of your service and secures
-                your appointment slot.
-                <br />
-                All deposits are non-refundable, but may be used for <u>one</u>
-                reschedule if I am notified <u>48 hours</u> in advance.
-                If you are a no call no show or late to your appointment,
-                you will lose your deposit.
-              </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">Are children allowed at your studio?</p>
-            <p class="small-text">
-              Children are only allowed if they are being serviced.
-            </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">How long does an appointment take?</p>
-            <p class="small-text">
-              The duration of an appointment depends on the service.
-              Added designs and embellishments can easily add another hour on
-              top of your initial service. On average it takes about 2-3 hours
-              per client at that point.
-            </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">
-              Why am I being charged more for a fill compared to your
-              regular clients?
-            </p>
-            <p class="small-text">
-              I prefer not to work over other nail tech’s acrylic work due to
-              product and technique differences. It becomes a little more work
-              on my end having to reshape/rebalance a set to my style. My number
-              one concern is not knowing if you have MMA on your nails. I refuse
-              to work over it due to its hazardous properties. Another concern
-              is not knowing how long you have actually had the previous set, as
-              lifting could have occurred making you prone to fungus and
-              bacteria underneath your nail. I usually do an assessment of your
-              previous set before making an exception.
-            </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">What is MMA?</p>
-            <p class="small-text">
-              Methyl Methacrylate is an ingredient that can be found in illegal
-              monomer liquids. In the early 1970’s, the Food and Drug
-              Administration received numerous complaints of personal injuries
-              associated with the use of acrylic monomer formulated with MMA.
-              Unfortunately, MMA is still being sold by the gallon illegally in
-              the states and is very poisonous to humans. The reports included
-              serious nail damage or loss, contact dermatitis, organ damage from
-              long term use, soreness and infection due to breaks caused by
-              rigidly adhered acrylic.
-            </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">Do your products contain MMA?</p>
-            <p class="small-text">
-              No I am proud to say that I use the Tammy Taylor acrylic system,
-              which does not contain the MMA chemical. My clients are more than
-              welcome to ask to see my product containers and read the
-              ingredients.
-            </p>
-            </div>
-          </md-list-item>
-
-          <md-list-item class="md-2-line">
-            <div>
-            <p class="sub-text">Do you re-use buffers and files?</p>
-            <p class="small-text">
-              I NEVER re-use my buffers or files. All files, disposable drill
-              bits, and buffers are disposed after each client. All bare drill
-              bits and general implements are sanitized with antibacterial soap,
-              disinfected with hospital grade EPA, and sterilized in an
-              autoclave after each client.
-            </p>
-            </div>
-          </md-list-item>
-
-        </md-list>
-
-        <h5>NO REFUNDS WILL BE GIVEN AFTER ANY SERVICE.</h5>
-      </md-card-content>
-    </md-card>
-  </md-content>
+  <md-content style="width:90%">
+    <md-tabs
+      class="md-primary"
+      md-stretch-tabs="always"
+      md-swipe-content="true">
+      <md-tab class="" ng-repeat="tab in ctrl.tabs">
+        <md-tab-label>{{tab.label}}</md-tab-label>
+        <md-tab-body>
+          <div ng-include="tab.src"></div>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>    
 </section>

@@ -1,0 +1,18 @@
+<div ng-controller="EtiquetteController as ctrl">
+    <md-content layout="row" layout-align="center center">
+        <md-card flex="70">
+            <md-card-content class="no-padding-top">
+                <h5 style="margin-bottom:0;">Basic Clientele Etiquette</h5>
+                <md-list layout-align="left" ng-repeat="item in ctrl.etiquettes">
+                    <md-list-item class="md-2-line">
+                        <div layout="row">
+                            <h4>{{$index + 1}})&nbsp;&nbsp;</h4>
+                            <p class="small-text" style="text-align: left">{{item}}</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </md-content>
+</div>
+  

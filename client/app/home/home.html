@@ -9,17 +9,26 @@
     layout-sm="column"
     layout-align="center center">
 
-    <md-card flex-sm="75" flex="25" ui-sref="gallery" class="pointer">
+    <!-- <md-card flex-sm="75" flex="25" ui-sref="gallery" class="pointer">
       <img ng-src="//res.cloudinary.com/angelmarie/image/upload/w_300,h_300,c_fill/v1458788573/gallery.jpg" class="md-card-image" alt="Washed Out">
       <md-card-content>
         GALLERY
       </md-card-content>
-    </md-card>
+    </md-card> -->
 
     <md-card flex-sm="75" flex="25" ui-sref="prices" class="pointer">
       <img ng-src="//res.cloudinary.com/angelmarie/image/upload/w_300,h_300,c_fill/v1457401300/prices.jpg" class="md-card-image" alt="Washed Out">
       <md-card-content>
         PRICES
+      </md-card-content>
+    </md-card>
+
+    <md-card
+      ui-sref="faq"
+      flex-sm="75" flex="25" class="pointer">
+      <img ng-src="//res.cloudinary.com/angelmarie/image/upload/w_300,h_300,c_fill/v1476679704/IMG_20161016_011412_tahntt.jpg" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        FAQ
       </md-card-content>
     </md-card>
 
@@ -39,22 +48,6 @@
     </md-card>
 
     <md-card
-      ui-sref="faq"
-      flex-sm="75" flex="25" class="pointer">
-      <img ng-src="//res.cloudinary.com/angelmarie/image/upload/w_300,h_300,c_fill/v1476679704/IMG_20161016_011412_tahntt.jpg" class="md-card-image" alt="Washed Out">
-      <md-card-content>
-        FAQ
-      </md-card-content>
-    </md-card>
-  </div>
-
-  <div
-    layout-margin
-    layout="row"
-    layout-sm="column"
-    layout-align="center center">
-
-    <md-card
       ui-sref="contact"
       flex-sm="75" flex="25" class="pointer">
       <img ng-src="//res.cloudinary.com/angelmarie/image/upload/w_300,h_300,c_fill/v1458788572/contact.jpg" class="md-card-image" alt="Washed Out">
@@ -62,5 +55,6 @@
         CONTACT
       </md-card-content>
     </md-card>
+    
   </div>
 </md-content>

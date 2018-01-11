@@ -62,8 +62,8 @@ pipes.builtAppScriptsProd = function() {
     return es.merge(validatedAppScripts)
         .pipe(pipes.orderedAppScripts())
         .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat('app.min.js'))
-            .pipe(plugins.uglify({mangle: false}))
+        .pipe(plugins.concat('app.min.js'))
+        .pipe(plugins.uglify({mangle: false}))
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
