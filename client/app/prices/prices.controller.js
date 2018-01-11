@@ -18,10 +18,6 @@
         {
           label: 'Add-Ons',
           src: 'app/prices/addons-tab.html'
-        },
-        {
-          label: 'Manicures/Pedicures',
-          src: 'app/prices/mani-pedi-tab.html'
         }
       ];
     }

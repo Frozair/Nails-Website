@@ -43,11 +43,7 @@
         {
           name: 'Home',
           state: 'home'
-        },
-        {
-          name: 'Gallery',
-          state: 'gallery'
-        },
+        },      
         {
           name: 'Prices',
           state: 'prices'
